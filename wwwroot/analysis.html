@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Sonoff Monitor</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+
+    <style>
+        .chart {
+            min-height: 300px;
+        }
+        .card {
+            margin:5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">
+                        Data
+                    </div>
+                    <div class="card-body">
+                        <div class="chart" id="mainChart"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">
+                        Info
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label">Duration</label>
+                            <div class="col-8 col-form-label">
+                                <span id="lblDuration"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label">Active period</label>
+                            <div class="col-8 col-form-label">
+                                <span id="lblActiveDuration"></span>
+                            </div>
+                        </div>                        
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label">Energy</label>
+                            <div class="col-8 col-form-label">
+                                <span id="lblPowerConsumption"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label">Avg. power</label>
+                            <div class="col-8 col-form-label">
+                                <span id="lblAveragePower"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-4 col-form-label">Avg. power when active</label>
+                            <div class="col-8 col-form-label">
+                                <span id="lblAveragePowerWhenActive"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">
+                        Power histogram
+                    </div>
+                    <div class="card-body">
+                        <div class="chart" id="powerHistogramChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/lib/highcharts.js"></script>
+    <script src="scripts/lib/histogram-bellcurve.js"></script>
+    <script src="scripts/lib/boost.js"></script>
+    <script src="scripts/lib/bootstrap-native-v4.min.js"></script>
+    <script src="scripts/lib/moment.js"></script>
+    <script src="scripts/lib/moment-duration-format.js"></script>
+
+    <script src="scripts/analysis.js"></script>
+</body>
+
+</html>

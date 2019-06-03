@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>Sonoff Monitor</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+
+    <style>
+        .chart {
+            min-height:380px;
+        }
+        
+.chartLabel {
+    position: absolute;
+    left:50%;
+    top:75%;
+    z-index: 1;
+    font-size:2em;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <form>
+                    <div class="form-row align-items-center">
+                        <div class="col-auto my-1">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Analyze existing files
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="existingFilesMenu">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 my-1">
+                            <label class="sr-only" for="hostname">Hostname</label>
+                            <input type="text" class="form-control" id="hostname" placeholder="Hostname" value="192.168.0.121">
+
+                            <label class="sr-only" for="filename">Filename</label>
+                            <input type="text" class="form-control" id="filename" placeholder="File to log to (optional)"
+                                value="">
+                        </div>
+                        <div class="col-auto my-1">
+                            <span id="lblStatus"></span>
+                        </div>
+                        <div class="col-auto my-1">
+                            <button class="btn" id="btnSetup">Setup</button>
+                        </div>
+
+                        <div class="col-auto my-1">
+                            <button class="btn btn-primary" id="btnStart">Start</button>
+                        </div>
+                        <div class="col-auto my-1">
+                            <button class="btn btn-secondary" id="btnStop">Stop</button>
+                        </div>
+                        <div class="col-auto my-1">
+                            <button class="btn btn-danger" id="btnReset">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">
+                        Power
+                    </div>
+                    <span class="chartLabel" id="lblPower"></span>
+                    <div id="chartPower" class="chart"></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">
+                        Voltage
+                    </div>
+                    <span class="chartLabel" id="lblVoltage"></span>
+                    <div id="chartVoltage" class="chart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">
+                        Amperage
+                    </div>
+                    <span class="chartLabel" id="lblAmperage"></span>
+                    <div id="chartAmperage" class="chart"></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">
+                        Power factor
+                    </div>
+                    <span class="chartLabel" id="lblPowerFactor"></span>
+                    <div id="chartPowerFactor" class="chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="scripts/lib/highcharts.js"></script>
+    <script src="scripts/lib/bootstrap-native-v4.min.js"></script>
+    <script src="scripts/realtime.js"></script>
+</body>
+
+</html>
