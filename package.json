@@ -13,7 +13,7 @@
     "@types/highcharts": "^5.0.29",
     "@types/moment": "^2.13.0",
     "@types/ws": "^6.0.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "moment": "^2.22.2",
     "ws": "^6.0.0"
   }
